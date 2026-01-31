@@ -58,4 +58,4 @@ spec:
     value: "true"
     effect: "NoSchedule"
 ```
->Note: This pod specification defines a toleration for the "prod" taint with the effect "NoSchedule." This allows the pod to be scheduled on tainted nodes.
+>Note: This pod specification defines a toleration for the "prod" taint with the effect "NoSchedule." This allows the pod to be scheduled on tainted nodes..
