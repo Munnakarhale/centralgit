@@ -1,4 +1,3 @@
-Haseeb Ullah
 KUBERNETES HPA & VPA CONCEPTS
 SCALING: Adjusting the resources based on varying load on application.
 Pods can be scaled in following 2 ways in K8s:
@@ -25,7 +24,7 @@ loop, checking metrics every 15 seconds.
 Note: Metric Server is the pre-requisite for HPA
 Practical:
 Deployment.yaml:
-apiVersion: apps/v1
+"apiVersion: apps/v1
 kind: Deployment
 metadata:
  name: nginx-deploy
@@ -62,7 +61,7 @@ spec:
  - protocol: TCP
  port: 80
  targetPort: 80
- type: ClusterIP
+ type: ClusterIP"
 Apply;
 kubectl apply -f nginx-deployment.yaml
 kubectl apply -f nginx-Service .yaml
