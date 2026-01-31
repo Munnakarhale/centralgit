@@ -56,15 +56,16 @@ Service .yaml:
 apiVersion: v1
 kind: Service
 metadata:
- name: nginx-svc
+  name: nginx-svc
 spec:
- selector:
- app: nginx
- ports:
- - protocol: TCP
- port: 80
- targetPort: 80
- type: ClusterIP"
+  selector:
+    app: nginx
+  type: ClusterIP
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80
+"
 Apply;
 kubectl apply -f nginx-deployment.yaml
 kubectl apply -f nginx-Service .yaml
