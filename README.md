@@ -24,31 +24,34 @@ loop, checking metrics every 15 seconds.
 Note: Metric Server is the pre-requisite for HPA
 Practical:
 Deployment.yaml:
-"apiVersion: apps/v1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
- name: nginx-deploy
+  name: nginx-deploy
 spec:
- replicas: 1
- selector:
- matchLabels:
- app: nginx
- template:
- metadata:
- labels:
- app: nginx
- spec:
- containers:
- - name: nginx
- image: nginx
- resources:
- requests:
- cpu: "100m"
- limits:
- cpu: "200m"
-Haseeb Ullah
- ports:
- - containerPort: 80
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nginx
+  template:
+    metadata:
+      labels:
+        app: nginx
+    spec:
+      containers:
+        - name: nginx
+          image: nginx
+          ports:
+            - containerPort: 80
+          resources:
+            requests:
+              cpu: "100m"
+            limits:
+              cpu: "200m"
+
+
+
+
 Service .yaml:
 apiVersion: v1
 kind: Service
